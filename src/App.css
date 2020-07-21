@@ -1,0 +1,235 @@
+/**********************************************************/
+/*Variables************************************************/
+/**********************************************************/
+:root {
+	/*main grid********************/
+	--test_border: none;
+	--test_border: 1px solid black;
+
+    --bg_color: rgb(226, 226, 226);
+	
+    --mobile_margin:	5vw;
+	--tablet_margin:	25px;
+	--laptop_margin: 	7vw;
+	--desktop_margin:   12vw;
+	--tv_margin: 		calc((100vw - 900px)/2);
+
+	/*header**********************/
+    --header-bg_color: #9933cc;
+
+	/*menu**********************/
+    --menu-bg_color: #69c7d8;
+
+	/*footer**********************/
+	--footer-bg_color: #0099cc;
+}
+
+body {
+    margin: 0 auto;
+	font-family: "Lucida Sans", sans-serif;
+}
+
+/**********************************************************/
+/*Grid containers******************************************/
+/**********************************************************/
+
+/*Main**************************************/
+#myApp {
+	display: grid;
+  	grid-template-areas:
+    	    	'header'
+        		'menu'
+        		'main'
+                'aside'
+        		'footer';
+  
+  	grid-gap: 10px;
+    background-color: var(--bg_color);
+    
+    border: var(--test_border);
+}
+
+#header { 
+	grid-area: header; 
+    background-color: var(--header-bg_color);
+    padding: 25px;
+
+    border: var(--test_border);
+}
+
+#menu { 
+    grid-area: menu;
+    padding: 15px; 
+    background-color: var(--menu-bg_color);
+  	margin-left: var(--mobile_margin);
+   	margin-right: var(--mobile_margin);
+
+    border: var(--test_border);
+}
+
+#main { 
+	grid-area: main;
+   	margin-left: var(--mobile_margin);
+   	margin-right: var(--mobile_margin);
+    
+    border: var(--test_border);
+}
+
+#aside { 
+	grid-area: aside;
+	padding: 15px;
+   	margin-left: var(--mobile_margin);
+   	margin-right: var(--mobile_margin);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: #33b5e5;
+
+    border: var(--test_border);
+}
+
+#footer { 
+	grid-area: footer; 
+    background-color: var(--footer-bg_color);
+    padding: 15px;
+    text-align: center;
+
+    border: var(--test_border);
+}
+
+
+/**********************************************************/
+/*Responsive***********************************************/
+/**********************************************************/
+
+/* For tablets: **********************************************************/
+@media only screen and (min-width: 501px) and (max-width: 768px){
+    #myApp {
+        grid-template-areas:
+            'header header header header header header'
+            'menu main main main main main'
+            'aside aside aside aside aside aside'
+            'footer footer footer footer footer footer';
+    }
+	#header {
+      padding-left: var(--tablet_margin);
+      padding-right: var(--tablet_margin);
+  	}
+  
+    #menu {
+    	margin-left: var(--tablet_margin);
+    	margin-right: 0;
+  	}
+  	
+    #main {
+    	margin-left: 0;
+    	margin-right: var(--tablet_margin);
+  	}
+
+	#aside {
+      margin-left: var(--tablet_margin);
+      margin-right: var(--tablet_margin);
+  	}
+  
+  	#footer {
+  		padding-left: var(--tablet_margin);
+  		padding-right: var(--tablet_margin);
+  	}
+    
+}
+
+/* Small screens, laptops: *****************************************************/
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    #myApp {
+        grid-template-areas:
+        'header header header header header header'
+        'menu main main main main aside'
+        'footer footer footer footer footer footer';
+    }
+    #header {
+        padding-left: var(--laptop_margin);
+        padding-right: var(--laptop_margin);
+    }
+    #menu {
+        margin-left: var(--laptop_margin);
+        margin-right: 0;
+    }
+    #main {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #aside {
+		margin-left: 0;
+    	margin-right: var(--laptop_margin);
+  	}
+    #footer {
+  	    padding-left: var(--laptop_margin);
+  	    padding-right: var(--laptop_margin);
+    }
+
+}
+
+/* Desktops, large screens: ******************************************************/
+@media only screen and (min-width: 1025px) and (max-width: 1200px){
+    #myApp {
+    grid-template-areas:
+      'header header header header header header'
+      'menu main main main main aside'
+      'footer footer footer footer footer footer';
+  }
+  #header {
+  	padding-left: var(--desktop_margin);
+  	padding-right: var(--desktop_margin);
+  }
+  #menu {
+    margin-left: var(--desktop_margin);
+    margin-right: 0;
+  }
+  #main {
+    margin-left: 0;
+    margin-right: 0;
+  }
+	#aside {
+		margin-left: 0;
+    	margin-right: var(--desktop_margin);
+  	}
+  
+  #footer {
+  	padding-left: var(--desktop_margin);
+  	padding-right: var(--desktop_margin);
+  }
+
+}
+
+/* Extra large screens, TV: **********************************/
+@media only screen and (min-width: 1201px) {
+    #myApp {
+        grid-template-areas:
+        'header header header header header header'
+        'menu main main main main aside'
+        'footer footer footer footer footer footer';
+    }
+    #header {
+        padding-left: var(--tv_margin);
+        padding-right: var(--tv_margin);
+    }
+    #menu {
+        margin-left: var(--tv_margin);
+        margin-right: 0;
+    }
+    #main {
+        margin-left: 0;
+        margin-right: 0;
+    }
+	#aside {
+		margin-left: 0;
+    	margin-right: var(--tv_margin);
+  	}
+  
+    #footer {
+        padding-left: var(--tv_margin);
+        padding-right: var(--tv_margin);
+    }
+}
+
+/**********************************************************/
+/*END Responsive*******************************************/
+/**********************************************************/
