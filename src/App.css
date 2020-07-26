@@ -3,9 +3,6 @@
 /**********************************************************/
 :root {
 	/*main grid********************/
-	--test_border: none;
-	--test_border: 1px solid black;
-
     --bg_color: rgb(226, 226, 226);
 	
     --mobile_margin:	5vw;
@@ -35,7 +32,10 @@ body {
 
 /*Main**************************************/
 #myApp {
-	display: grid;
+	--test_border: 1px solid black;
+	--test_border: none;
+    
+    display: grid;
   	grid-template-areas:
     	    	'header'
         		'menu'
@@ -45,16 +45,12 @@ body {
   
   	grid-gap: 10px;
     background-color: var(--bg_color);
-    
-    border: var(--test_border);
 }
 
 #header { 
 	grid-area: header; 
     background-color: var(--header-bg_color);
     padding: 25px;
-
-    border: var(--test_border);
 }
 
 #menu { 
@@ -63,16 +59,12 @@ body {
     background-color: var(--menu-bg_color);
   	margin-left: var(--mobile_margin);
    	margin-right: var(--mobile_margin);
-
-    border: var(--test_border);
 }
 
 #main { 
 	grid-area: main;
    	margin-left: var(--mobile_margin);
    	margin-right: var(--mobile_margin);
-    
-    border: var(--test_border);
 }
 
 #aside { 
@@ -82,8 +74,6 @@ body {
    	margin-right: var(--mobile_margin);
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     background-color: #33b5e5;
-
-    border: var(--test_border);
 }
 
 #footer { 
@@ -91,10 +81,11 @@ body {
     background-color: var(--footer-bg_color);
     padding: 15px;
     text-align: center;
-
-    border: var(--test_border);
 }
 
+#myApp > div {
+    border: var(--test_border);
+}
 
 /**********************************************************/
 /*Responsive***********************************************/
