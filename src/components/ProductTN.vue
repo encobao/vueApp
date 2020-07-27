@@ -60,7 +60,6 @@
 <script>
 export default {
   name: 'ProductTN',
-  //props: ['product']
   props: {
       img_src:  String, 
       name:     String,
