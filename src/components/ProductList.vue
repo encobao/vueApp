@@ -46,18 +46,14 @@ export default {
     items: {
       type: Array,
       required: true
-    },
-    addToCart: {
-      type: Function,
-      required: true
     }
   },
   methods: {
     addProductToCart(event) {
       event.preventDefault();
-      //alert(event.currentTarget.elements.namedItem('productId').value);
-      //alert(event.currentTarget.elements.namedItem('quantity').value);
-      this.addToCart(event.currentTarget.elements.namedItem('productId').value, event.currentTarget.elements.namedItem('quantity').value)
+      let prodId = event.currentTarget.elements.namedItem('productId').value;
+      let quant = event.currentTarget.elements.namedItem('quantity').value;
+      this.$emit('addToCart', prodId, quant);
     }
   }
 }
